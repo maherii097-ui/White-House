@@ -1,0 +1,2327 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maison Lumière — فساتين الزفاف الفاخرة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Tajawal:wght@400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Tajawal:wght@400;500;700&display=swap"></noscript>
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8D5A0;
+    --gold-pale: #F5EDD5;
+    --gold-dark: #8B6914;
+    --ivory: #FAF6EE;
+    --ivory-dark: #F0E8D5;
+    --black: #0A0A08;
+    --black-soft: #1A1A16;
+    --black-mid: #2C2C24;
+    --white: #FFFFFF;
+    --gray-warm: #6B6559;
+    --gray-light: #E8E2D8;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Tajawal', sans-serif;
+    background: var(--black);
+    color: var(--ivory);
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* CUSTOM CURSOR */
+  .cursor {
+    position: fixed;
+    width: 10px; height: 10px;
+    background: var(--gold);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease;
+  }
+  .cursor-ring {
+    position: fixed;
+    width: 36px; height: 36px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: all 0.18s ease;
+    opacity: 0.6;
+  }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--black); }
+  ::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 2px; }
+
+  /* ===== NAVBAR ===== */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 1.5rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.4s ease;
+  }
+  nav.scrolled {
+    background: rgba(10,10,8,0.92);
+    backdrop-filter: blur(20px);
+    padding: 1rem 3rem;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    text-decoration: none;
+  }
+  .nav-logo span {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    color: var(--ivory);
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0; right: 0;
+    height: 1px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: right;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a:hover::after { transform: scaleX(1); transform-origin: left; }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .wishlist-btn {
+    background: none;
+    border: none;
+    color: var(--ivory);
+    cursor: none;
+    font-size: 1.3rem;
+    position: relative;
+    transition: color 0.3s;
+  }
+  .wishlist-btn:hover { color: var(--gold); }
+  .wishlist-count {
+    position: absolute;
+    top: -8px; left: -8px;
+    background: var(--gold);
+    color: var(--black);
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    font-size: 0.65rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn-book {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 0.55rem 1.5rem;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: none;
+    transition: all 0.3s ease;
+  }
+  .btn-book:hover {
+    background: var(--gold);
+    color: var(--black);
+  }
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: none;
+    background: none;
+    border: none;
+  }
+  .hamburger span {
+    display: block;
+    width: 24px; height: 1px;
+    background: var(--gold);
+    transition: all 0.3s;
+  }
+
+  /* ===== HERO ===== */
+  #hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('images/0.jpg');
+    background-size: cover;
+    background-position: center top;
+    background-color: #0A0A08;
+    filter: brightness(0.35);
+  }
+  .hero-cinematic {
+    position: absolute;
+    inset: 0;
+    background: 
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    opacity: 0.5;
+  }
+  .hero-vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.7) 100%);
+  }
+
+  /* Animated silk waves */
+  .silk-layer {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    opacity: 0.07;
+  }
+  .silk-wave {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid var(--gold);
+    animation: silkPulse 8s ease-in-out infinite;
+  }
+  .silk-wave:nth-child(1) { width: 600px; height: 600px; top: -200px; right: -100px; animation-delay: 0s; }
+  .silk-wave:nth-child(2) { width: 900px; height: 900px; bottom: -400px; left: -200px; animation-delay: 2s; }
+  .silk-wave:nth-child(3) { width: 400px; height: 400px; top: 20%; left: 10%; animation-delay: 4s; }
+
+  @keyframes silkPulse {
+    0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.4; }
+    50% { transform: scale(1.1) rotate(5deg); opacity: 0.8; }
+  }
+
+  /* Floating particles */
+  .particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .particle {
+    position: absolute;
+    width: 2px; height: 2px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: floatParticle linear infinite;
+    opacity: 0;
+  }
+
+  @keyframes floatParticle {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.6; }
+    90% { opacity: 0.3; }
+    100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
+  }
+
+  .hero-content {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    max-width: 900px;
+    padding: 0 2rem;
+  }
+  .hero-eyebrow {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.3s forwards;
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    font-weight: 400;
+    line-height: 1.05;
+    color: var(--ivory);
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.6s forwards;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold-light);
+    display: block;
+  }
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(250,246,238,0.7);
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.9s forwards;
+    letter-spacing: 0.05em;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 1s ease 1.2s forwards;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--black);
+    border: none;
+    padding: 1rem 2.5rem;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: none;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%; right: 100%; bottom: 0;
+    background: rgba(255,255,255,0.15);
+    transition: all 0.4s ease;
+  }
+  .btn-primary:hover::before { left: 0; right: 0; }
+  .btn-secondary {
+    background: transparent;
+    color: var(--ivory);
+    border: 1px solid rgba(250,246,238,0.4);
+    padding: 1rem 2.5rem;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: none;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+  .btn-secondary:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    animation: fadeIn 1s ease 2s forwards;
+  }
+  .hero-scroll span {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .scroll-line {
+    width: 1px; height: 50px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollDrop 2s ease-in-out infinite;
+  }
+  @keyframes scrollDrop {
+    0% { transform: scaleY(0); transform-origin: top; opacity: 1; }
+    50% { transform: scaleY(1); transform-origin: top; opacity: 1; }
+    100% { transform: scaleY(1); transform-origin: bottom; opacity: 0; }
+  }
+
+  /* Blur blobs for cinematic effect */
+  .blur-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.15;
+    pointer-events: none;
+  }
+  .blob-1 { width: 500px; height: 500px; background: var(--gold); top: -100px; right: 10%; animation: blobFloat 12s ease-in-out infinite; }
+  .blob-2 { width: 300px; height: 300px; background: var(--gold-dark); bottom: 10%; left: 5%; animation: blobFloat 15s ease-in-out infinite reverse; }
+  @keyframes blobFloat {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -30px) scale(1.05); }
+    66% { transform: translate(-20px, 20px) scale(0.95); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* ===== MARQUEE ===== */
+  .marquee-section {
+    background: var(--gold);
+    padding: 0.75rem 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+  }
+  .marquee-track {
+    display: flex;
+    gap: 3rem;
+    animation: marqueeScroll 25s linear infinite;
+    white-space: nowrap;
+    width: max-content;
+  }
+  .marquee-item {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--black);
+    letter-spacing: 0.1em;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .marquee-diamond { color: var(--black-mid); font-size: 0.6rem; }
+  @keyframes marqueeScroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ===== SECTIONS ===== */
+  section { padding: 7rem 0; }
+
+  .container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 3rem;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    font-weight: 400;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 400;
+    color: var(--ivory);
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+  .section-title em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+  .section-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: rgba(250,246,238,0.6);
+    line-height: 1.8;
+    max-width: 550px;
+    font-style: italic;
+  }
+  .gold-divider {
+    width: 60px; height: 1px;
+    background: var(--gold);
+    margin: 2rem 0;
+  }
+
+  /* ===== ABOUT STRIP ===== */
+  #about {
+    background: var(--black-soft);
+    position: relative;
+    overflow: hidden;
+  }
+  #about::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  .stat-item {
+    border-top: 1px solid rgba(201,168,76,0.3);
+    padding-top: 1.2rem;
+  }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: var(--gold);
+    line-height: 1;
+    font-weight: 400;
+  }
+  .stat-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    color: var(--gray-warm);
+    text-transform: uppercase;
+    margin-top: 0.3rem;
+  }
+  .about-visual {
+    position: relative;
+    height: 550px;
+  }
+  .about-frame {
+    position: absolute;
+    border: 1px solid rgba(201,168,76,0.3);
+  }
+  .about-frame-1 {
+    inset: 0;
+    background: linear-gradient(135deg, rgba(201,168,76,0.08), rgba(201,168,76,0.02));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .about-frame-2 {
+    top: -20px; right: -20px;
+    width: 80%; height: 80%;
+    border-color: rgba(201,168,76,0.15);
+    pointer-events: none;
+  }
+  .about-inner-art {
+    text-align: center;
+    padding: 2rem;
+  }
+  .about-monogram {
+    font-family: 'Playfair Display', serif;
+    font-size: 8rem;
+    color: rgba(201,168,76,0.15);
+    line-height: 1;
+    font-style: italic;
+  }
+  .about-tag {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--gold);
+    letter-spacing: 0.2em;
+  }
+
+  /* ===== COLLECTIONS (FILTER + HOVER ZOOM) ===== */
+  #collections {
+    background: var(--black);
+  }
+  .collections-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .filter-tabs {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .filter-btn {
+    background: none;
+    border: 1px solid rgba(201,168,76,0.25);
+    color: var(--gray-warm);
+    padding: 0.5rem 1.2rem;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: none;
+    transition: all 0.3s;
+  }
+  .filter-btn.active, .filter-btn:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(201,168,76,0.05);
+  }
+
+  .dresses-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .dress-card {
+    position: relative;
+    overflow: hidden;
+    cursor: none;
+    background: var(--black-soft);
+  }
+  .dress-card:first-child {
+    grid-row: span 2;
+  }
+  .dress-visual {
+    width: 100%;
+    padding-bottom: 130%;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--black-mid), var(--black-soft));
+  }
+  .dress-card:first-child .dress-visual {
+    padding-bottom: 265%;
+  }
+  .dress-art {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+  }
+  .dress-art img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: block;
+  }
+  .dress-card:hover .dress-art img {
+    transform: scale(1.08);
+  }
+  .dress-svg-art {
+    width: 55%;
+    opacity: 0.6;
+    transition: all 0.7s ease;
+    filter: drop-shadow(0 0 30px rgba(201,168,76,0.2));
+  }
+  .dress-card:hover .dress-svg-art {
+    opacity: 0.9;
+    filter: drop-shadow(0 0 50px rgba(201,168,76,0.4));
+  }
+  .dress-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10,10,8,0.95) 0%, rgba(10,10,8,0.3) 50%, transparent 100%);
+    transition: opacity 0.4s ease;
+  }
+  .dress-hover-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10,10,8,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    backdrop-filter: blur(2px);
+  }
+  .dress-card:hover .dress-hover-overlay { opacity: 1; }
+  .view-btn-label {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 0.7rem 1.8rem;
+    font-family: "Tajawal", sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+  }
+  .dress-card:hover .view-btn-label {
+    transform: translateY(0);
+    background: var(--gold);
+    color: var(--black);
+  }
+  .dress-info {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 1.5rem;
+  }
+  .dress-category {
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+  }
+  .dress-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--ivory);
+    font-weight: 400;
+    margin-bottom: 0.3rem;
+  }
+  .dress-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: var(--gold-light);
+    font-style: italic;
+  }
+  .dress-wishlist {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: rgba(10,10,8,0.7);
+    border: 1px solid rgba(201,168,76,0.3);
+    color: var(--gray-warm);
+    width: 38px; height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: none;
+    font-size: 1rem;
+    transition: all 0.3s;
+    backdrop-filter: blur(10px);
+  }
+  .dress-wishlist:hover, .dress-wishlist.active {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(201,168,76,0.1);
+  }
+  .dress-wishlist.active { color: #e74c3c; border-color: #e74c3c; }
+  .dress-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--gold);
+    color: var(--black);
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.7rem;
+    font-weight: 700;
+  }
+
+  /* ===== CAROUSEL ===== */
+  #featured {
+    background: var(--black-soft);
+    overflow: hidden;
+  }
+  .carousel-wrap {
+    position: relative;
+  }
+  .carousel-track-container {
+    overflow: hidden;
+    margin: 3rem -3rem 0;
+  }
+  .carousel-track {
+    display: flex;
+    gap: 1.5rem;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    padding: 0 3rem;
+  }
+  .carousel-slide {
+    flex: 0 0 320px;
+    position: relative;
+    cursor: none;
+  }
+  .carousel-slide-img {
+    width: 100%;
+    padding-bottom: 140%;
+    background: linear-gradient(135deg, var(--black-mid), var(--black));
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(201,168,76,0.15);
+  }
+  .carousel-art {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: block;
+  }
+  .carousel-art img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+  .carousel-meta {
+    padding: 1.2rem 0;
+  }
+  .carousel-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--ivory);
+    margin-bottom: 0.3rem;
+    font-weight: 400;
+  }
+  .carousel-detail {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    color: var(--gold);
+    font-style: italic;
+  }
+  .carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+  .carousel-arrows {
+    display: flex;
+    gap: 1rem;
+  }
+  .carousel-arrow {
+    background: transparent;
+    border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold);
+    width: 50px; height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: none;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+  }
+  .carousel-arrow:hover {
+    background: var(--gold);
+    color: var(--black);
+  }
+  .carousel-dots {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .c-dot {
+    width: 20px; height: 1px;
+    background: rgba(201,168,76,0.3);
+    cursor: none;
+    transition: all 0.3s;
+    border: none;
+  }
+  .c-dot.active {
+    background: var(--gold);
+    width: 40px;
+  }
+
+  /* ===== FULLSCREEN GALLERY ===== */
+  #gallery {
+    background: var(--black);
+    padding: 5rem 0;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 0.75rem;
+    margin-top: 3rem;
+  }
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    cursor: none;
+  }
+  .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+  .gallery-item:nth-child(4) { grid-column: span 2; }
+  .gallery-item:nth-child(6) { grid-column: span 2; }
+  .gallery-img {
+    width: 100%;
+    padding-bottom: 100%;
+    background: linear-gradient(135deg, var(--black-mid), var(--black-soft));
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+  }
+  .gallery-item:nth-child(1) .gallery-img { padding-bottom: 50%; }
+  .gallery-item:nth-child(4) .gallery-img,
+  .gallery-item:nth-child(6) .gallery-img { padding-bottom: 55%; }
+  .gallery-art {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: block;
+  }
+  .gallery-art img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  .gallery-item:hover .gallery-art img {
+    transform: scale(1.05);
+  }
+  .gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10,10,8,0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.4s ease;
+  }
+  .gallery-item:hover .gallery-overlay {
+    background: rgba(10,10,8,0.6);
+  }
+  .gallery-expand {
+    color: var(--gold);
+    font-size: 1.5rem;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.4s ease;
+    text-decoration: none;
+  }
+  .gallery-item:hover .gallery-expand {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Lightbox */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+  .lightbox.open { display: flex; }
+  .lb-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.96);
+    backdrop-filter: blur(14px);
+  }
+  .lb-img-wrap {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 90vw;
+    max-height: 85vh;
+  }
+  #lbImg {
+    max-width: 88vw;
+    max-height: 82vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    border: 1px solid rgba(201,168,76,0.25);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  #lbImg.lb-loaded { opacity: 1; }
+  .lb-spinner {
+    position: absolute;
+    width: 42px; height: 42px;
+    border: 2px solid rgba(201,168,76,0.15);
+    border-top-color: var(--gold);
+    border-radius: 50%;
+    animation: lbSpin 0.75s linear infinite;
+  }
+  @keyframes lbSpin { to { transform: rotate(360deg); } }
+  .lb-close {
+    position: fixed;
+    top: 1.2rem; right: 1.2rem;
+    z-index: 10;
+    background: rgba(10,10,8,0.85);
+    border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold);
+    width: 46px; height: 46px;
+    font-size: 1.2rem;
+    cursor: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    border-radius: 0;
+  }
+  .lb-close:hover { background: var(--gold); color: var(--black); }
+  .lb-arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(10,10,8,0.75);
+    border: 1px solid rgba(201,168,76,0.3);
+    color: var(--gold);
+    width: 48px; height: 48px;
+    font-size: 1.3rem;
+    cursor: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+  }
+  .lb-arrow:hover { background: var(--gold); color: var(--black); }
+  .lb-prev { left: 1rem; }
+  .lb-next { right: 1rem; }
+  .lb-info {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    text-align: center;
+    pointer-events: none;
+  }
+  .lb-caption {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--gold-light);
+    letter-spacing: 0.1em;
+  }
+  .lb-counter {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: rgba(201,168,76,0.45);
+    margin-top: 0.3rem;
+  }
+
+  /* ===== APPOINTMENT ===== */
+  #appointment {
+    background: var(--black-soft);
+    position: relative;
+    overflow: hidden;
+  }
+  #appointment::before {
+    content: 'ML';
+    font-family: 'Playfair Display', serif;
+    font-size: 30rem;
+    font-style: italic;
+    color: rgba(201,168,76,0.03);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    line-height: 1;
+  }
+  .appointment-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+    position: relative;
+  }
+  .appt-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .form-group label {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(201,168,76,0.3);
+    color: var(--ivory);
+    padding: 0.75rem 0;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s;
+    cursor: none;
+    width: 100%;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-bottom-color: var(--gold);
+  }
+  .form-group select option { background: var(--black-mid); }
+  .form-group textarea { resize: none; height: 80px; }
+  .form-submit {
+    background: var(--gold);
+    border: none;
+    color: var(--black);
+    padding: 1.1rem;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    cursor: none;
+    margin-top: 0.5rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .form-submit:hover { background: var(--gold-light); }
+  .appt-info {
+    padding-top: 1rem;
+  }
+  .appt-feature {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+  }
+  .appt-icon {
+    color: var(--gold);
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    width: 30px;
+    text-align: center;
+  }
+  .appt-feature-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--ivory);
+    margin-bottom: 0.3rem;
+  }
+  .appt-feature-text {
+    font-size: 0.88rem;
+    color: var(--gray-warm);
+    line-height: 1.6;
+  }
+
+  /* ===== TESTIMONIALS ===== */
+  #testimonials {
+    background: var(--black);
+    text-align: center;
+  }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+  }
+  .testimonial-card {
+    background: var(--black-soft);
+    border: 1px solid rgba(201,168,76,0.15);
+    padding: 2.5rem 2rem;
+    position: relative;
+    transition: all 0.4s ease;
+  }
+  .testimonial-card:hover {
+    border-color: rgba(201,168,76,0.4);
+    transform: translateY(-5px);
+  }
+  .testimonial-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: var(--gold);
+    line-height: 0.5;
+    margin-bottom: 1.5rem;
+    opacity: 0.4;
+  }
+  .testimonial-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: rgba(250,246,238,0.75);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+  .testimonial-stars {
+    color: var(--gold);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 1rem;
+  }
+  .testimonial-name {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .testimonial-date {
+    font-size: 0.75rem;
+    color: var(--gray-warm);
+    margin-top: 0.25rem;
+  }
+
+  /* ===== WISHLIST SIDEBAR ===== */
+  .wishlist-sidebar {
+    position: fixed;
+    top: 0; right: -420px;
+    width: 400px;
+    height: 100vh;
+    background: var(--black-soft);
+    border-left: 1px solid rgba(201,168,76,0.2);
+    z-index: 2000;
+    transition: right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    backdrop-filter: blur(20px);
+  }
+  .wishlist-sidebar.open { right: 0; }
+  .wishlist-sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1999;
+    display: none;
+    backdrop-filter: blur(4px);
+  }
+  .wishlist-sidebar-overlay.open { display: block; }
+  .wishlist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    margin-bottom: 1.5rem;
+  }
+  .wishlist-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--ivory);
+  }
+  .wishlist-close {
+    background: none;
+    border: 1px solid rgba(201,168,76,0.3);
+    color: var(--gold);
+    width: 36px; height: 36px;
+    cursor: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: all 0.3s;
+  }
+  .wishlist-close:hover { background: var(--gold); color: var(--black); }
+  .wishlist-items {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .wishlist-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid rgba(201,168,76,0.1);
+    align-items: center;
+  }
+  .wishlist-item-art {
+    width: 60px; height: 80px;
+    background: var(--black-mid);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .wishlist-item-info { flex: 1; }
+  .wishlist-item-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    color: var(--ivory);
+    margin-bottom: 0.2rem;
+  }
+  .wishlist-item-price {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--gold);
+    font-style: italic;
+  }
+  .wishlist-remove {
+    background: none;
+    border: none;
+    color: var(--gray-warm);
+    cursor: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+  }
+  .wishlist-remove:hover { color: #e74c3c; }
+  .wishlist-empty {
+    text-align: center;
+    padding: 3rem 0;
+    color: var(--gray-warm);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--black);
+    border-top: 1px solid rgba(201,168,76,0.15);
+    padding: 4rem 0 2rem;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+  .footer-brand p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--gray-warm);
+    margin-top: 1rem;
+    line-height: 1.8;
+    max-width: 280px;
+  }
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--gold);
+    font-style: italic;
+  }
+  .footer-col h4 {
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 0.75rem; }
+  .footer-col ul li a {
+    color: var(--gray-warm);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+    cursor: none;
+  }
+  .footer-col ul li a:hover { color: var(--gold); }
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(201,168,76,0.1);
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .footer-bottom p {
+    font-size: 0.78rem;
+    color: var(--gray-warm);
+  }
+  .social-links {
+    display: flex;
+    gap: 1rem;
+  }
+  .social-link {
+    color: var(--gray-warm);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    cursor: none;
+  }
+  .social-link:hover { color: var(--gold); }
+
+  /* ===== NOTIFICATION TOAST ===== */
+  .toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: var(--black-soft);
+    border: 1px solid var(--gold);
+    color: var(--ivory);
+    padding: 1rem 2rem;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.88rem;
+    z-index: 8000;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    white-space: nowrap;
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+  .toast span { color: var(--gold); }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ===== MOBILE MENU ===== */
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    background: var(--black);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    transform: translateX(100%);
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .mobile-menu.open { transform: translateX(0); }
+  .mobile-menu a {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--ivory);
+    text-decoration: none;
+    font-style: italic;
+    transition: color 0.3s;
+  }
+  .mobile-menu a:hover { color: var(--gold); }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 1024px) {
+    .dresses-grid { grid-template-columns: repeat(2, 1fr); }
+    .dress-card:first-child { grid-row: span 1; }
+    .dress-card:first-child .dress-visual { padding-bottom: 130%; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 1; }
+    .gallery-item:nth-child(1) .gallery-img { padding-bottom: 60%; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  }
+  @media (max-width: 768px) {
+    nav { padding: 1.2rem 1.5rem; }
+    nav.scrolled { padding: 0.8rem 1.5rem; }
+    .nav-links { display: none; }
+    .btn-book { display: none; }
+    .hamburger { display: flex; }
+    .container { padding: 0 1.5rem; }
+    section { padding: 5rem 0; }
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .about-visual { height: 300px; }
+    .dresses-grid { grid-template-columns: 1fr; }
+    .dress-card:first-child .dress-visual { padding-bottom: 130%; }
+    .appointment-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .gallery-item:nth-child(1) { grid-column: span 2; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .wishlist-sidebar { width: 100%; right: -100%; }
+    .hero-actions { flex-direction: column; align-items: center; }
+    body { cursor: auto; }
+    .cursor, .cursor-ring { display: none; }
+  }
+</style>
+</head>
+<body>
+<!--
+===================================================
+  دليل الصور — ضع الصور في نفس مجلد الملف
+===================================================
+  HERO:      hero-bg.jpg         (1920x1080)
+  DRESSES:   dress1.jpg          (600x900)
+             dress2.jpg          (600x900)
+             dress3.jpg          (600x900)
+             dress4.jpg          (600x900)
+             dress5.jpg          (600x900)
+  CAROUSEL:  carousel1.jpg       (500x700)
+             carousel2.jpg       (500x700)
+             carousel3.jpg       (500x700)
+             carousel4.jpg       (500x700)
+             carousel5.jpg       (500x700)
+  GALLERY:   gallery1..6.jpg     (800x600)
+===================================================
+-->
+
+
+<!-- Custom Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- Toast notification -->
+<div class="toast" id="toast">تمت الإضافة إلى <span>المفضلة ♥</span></div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <div class="lb-backdrop" id="lbBackdrop"></div>
+  <button class="lb-close" id="lbClose">✕</button>
+  <button class="lb-arrow lb-prev" id="lbPrev">&#8592;</button>
+  <button class="lb-arrow lb-next" id="lbNext">&#8594;</button>
+  <div class="lb-img-wrap">
+    <img id="lbImg" src="" alt="">
+    <div class="lb-spinner" id="lbSpinner"></div>
+  </div>
+  <div class="lb-info">
+    <div class="lb-caption" id="lbCaption"></div>
+    <div class="lb-counter" id="lbCounter"></div>
+  </div>
+</div>
+
+<!-- Wishlist Sidebar -->
+<div class="wishlist-sidebar-overlay" id="wishlistOverlay"></div>
+<aside class="wishlist-sidebar" id="wishlistSidebar">
+  <div class="wishlist-header">
+    <h2 class="wishlist-title">المفضلة</h2>
+    <button class="wishlist-close" id="wishlistClose">✕</button>
+  </div>
+  <div class="wishlist-items" id="wishlistItems">
+    <div class="wishlist-empty" id="wishlistEmpty">لا يوجد فساتين في المفضلة بعد</div>
+  </div>
+</aside>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about">المحل</a>
+  <a href="#collections">المجموعات</a>
+  <a href="#featured">المميزة</a>
+  <a href="#gallery">المعرض</a>
+  <a href="#testimonials">آراء العملاء</a>
+  <a href="#appointment">احجزي موعدك</a>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">Maison <span>Lumière</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">المحل</a></li>
+    <li><a href="#collections">المجموعات</a></li>
+    <li><a href="#featured">المميزة</a></li>
+    <li><a href="#gallery">المعرض</a></li>
+    <li><a href="#testimonials">آراء العملاء</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="wishlist-btn" id="wishlistToggle" title="المفضلة">
+      ♡
+      <span class="wishlist-count" id="wishlistCount" style="display:none">0</span>
+    </button>
+    <button class="btn-book" onclick="document.getElementById('appointment').scrollIntoView({behavior:'smooth'})">احجزي موعدك</button>
+    <button class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="blur-blob blob-1"></div>
+  <div class="blur-blob blob-2"></div>
+  <div class="hero-bg"></div>
+  <div class="hero-cinematic"></div>
+  <div class="hero-vignette"></div>
+  <div class="silk-layer">
+    <div class="silk-wave"></div>
+    <div class="silk-wave"></div>
+    <div class="silk-wave"></div>
+  </div>
+  <div class="particles" id="particles"></div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">✦ مجموعة ٢٠٢٥ الملكية ✦</p>
+    <h1 class="hero-title">
+      حيث تبدأ<br>
+      <em>حكايتك</em>
+    </h1>
+    <p class="hero-subtitle">فساتين زفاف حصرية تُصنع لك وحدك</p>
+    <div class="hero-actions">
+      <a href="#collections" class="btn-primary">اكتشفي المجموعة</a>
+      <a href="#appointment" class="btn-secondary">احجزي جلسة خاصة</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span>مرري للأسفل</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-item">فساتين زفاف فاخرة <span class="marquee-diamond">◆</span></span>
+    <span class="marquee-item">تصاميم حصرية <span class="marquee-diamond">◆</span></span>
+    <span class="marquee-item">خيوط مطرزة بالذهب <span class="marquee-diamond">◆</span></span>
+    <span class="marquee-item">تفصيل على المقاس <span class="marquee-diamond">◆</span></span>
+    <span class="marquee-item">مواد فاخرة من إيطاليا <span class="marquee-diamond">◆</span></span>
+    <span class="marquee-item">Maison Lumière <span class="marquee-diamond">◆</span></span>
+    <!-- repeated for infinite effect -->
+    <span class="marquee-item">فساتين زفاف فاخرة <span class="marquee-diamond">◆</span></span>
+    <span class="marquee-item">تصاميم حصرية <span class="marquee-diamond">◆</span></span>
+    <span class="marquee-item">خيوط مطرزة بالذهب <span class="marquee-diamond">◆</span></span>
+    <span class="marquee-item">تفصيل على المقاس <span class="marquee-diamond">◆</span></span>
+    <span class="marquee-item">مواد فاخرة من إيطاليا <span class="marquee-diamond">◆</span></span>
+    <span class="marquee-item">Maison Lumière <span class="marquee-diamond">◆</span></span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="reveal">
+        <p class="section-label">✦ قصتنا</p>
+        <h2 class="section-title">أكثر من مجرد<br>فستان، إنها <em>ذكرى</em></h2>
+        <div class="gold-divider"></div>
+        <p class="section-desc">في Maison Lumière، نؤمن بأن كل عروس تستحق فستاناً يحكي قصتها. كل خياطة، كل مطرزة، كل تفصيل — يُنفَّذ بعناية استثنائية وعشق لفن الأزياء الراقية.</p>
+        <div class="about-stats">
+          <div class="stat-item">
+            <div class="stat-num">15+</div>
+            <div class="stat-label">سنة خبرة</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">2K+</div>
+            <div class="stat-label">عروسة سعيدة</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">50+</div>
+            <div class="stat-label">تصميم حصري</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">تفصيل يدوي</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-visual reveal" style="transition-delay:0.3s">
+        <div class="about-frame about-frame-1">
+          <div class="about-inner-art">
+            <div class="about-monogram">ML</div>
+            <p class="about-tag">— Maison Lumière —</p>
+            <p style="color:var(--gray-warm);font-size:0.8rem;margin-top:1rem;letter-spacing:0.2em">منذ ٢٠١٠</p>
+          </div>
+        </div>
+        <div class="about-frame about-frame-2"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COLLECTIONS -->
+<section id="collections">
+  <div class="container">
+    <div class="collections-header">
+      <div class="reveal">
+        <p class="section-label">✦ مجموعاتنا</p>
+        <h2 class="section-title">اختاري <em>إطلالتك</em></h2>
+      </div>
+      <div class="filter-tabs reveal">
+        <button class="filter-btn active" data-filter="all">الكل</button>
+        <button class="filter-btn" data-filter="classic">كلاسيك</button>
+        <button class="filter-btn" data-filter="royal">ملكي</button>
+        <button class="filter-btn" data-filter="modern">عصري</button>
+        <button class="filter-btn" data-filter="oriental">شرقي</button>
+      </div>
+    </div>
+
+    <div class="dresses-grid" id="dressesGrid">
+
+      <div class="dress-card reveal" data-category="royal">
+        <div class="dress-visual">
+          <div class="dress-art" onclick="lbOpen('images/1.jpg','Reine d Or','dress',0)" style="cursor:none;position:relative">
+            <img src="images/1.jpg" alt="Reine d Or" onerror="this.style.display='none';var n=this.nextElementSibling;if(n)n.style.display='flex'" >
+            <div style="display:none;position:absolute;inset:0;align-items:center;justify-content:center"><svg viewBox="0 0 180 300" width="60%" fill="none"><path d="M90 18 C80 18 72 30 72 44 L60 95 L30 275 L150 275 L120 95 L108 44 C108 30 100 18 90 18Z" fill="rgba(201,168,76,0.1)" stroke="#C9A84C" stroke-width="0.8"/><ellipse cx="90" cy="32" rx="16" ry="12" fill="none" stroke="#C9A84C" stroke-width="0.6" opacity="0.6"/><circle cx="90" cy="32" r="3" fill="#C9A84C" opacity="0.5"/></svg></div>
+          </div>
+          <div class="dress-overlay"></div>
+          <div class="dress-hover-overlay"><span class="view-btn-label">عرض الصورة كاملة ✦</span></div>
+        </div>
+        <div class="dress-info">
+          <p class="dress-category">ملكي</p>
+          <h3 class="dress-name">Reine d'Or</h3>
+          <p class="dress-price">من ٢٥,٠٠٠ ريال</p>
+        </div>
+        <button class="dress-wishlist" data-id="0" data-name="Reine d'Or" data-price="٢٥,٠٠٠ ريال" onclick="toggleWishlist(this)">♡</button>
+        <div class="dress-badge">جديد</div>
+      </div>
+
+      <div class="dress-card reveal" data-category="classic" style="transition-delay:0.1s">
+        <div class="dress-visual">
+          <div class="dress-art" onclick="lbOpen('images/2.jpg','Belle Epoque','dress',1)" style="cursor:none;position:relative">
+            <img src="images/2.jpg" alt="Belle Epoque" onerror="this.style.display='none';var n=this.nextElementSibling;if(n)n.style.display='flex'" >
+            <div style="display:none;position:absolute;inset:0;align-items:center;justify-content:center"><svg viewBox="0 0 180 300" width="60%" fill="none"><path d="M90 18 C80 18 72 30 72 44 L60 95 L30 275 L150 275 L120 95 L108 44 C108 30 100 18 90 18Z" fill="rgba(201,168,76,0.1)" stroke="#C9A84C" stroke-width="0.8"/><ellipse cx="90" cy="32" rx="16" ry="12" fill="none" stroke="#C9A84C" stroke-width="0.6" opacity="0.6"/><circle cx="90" cy="32" r="3" fill="#C9A84C" opacity="0.5"/></svg></div>
+          </div>
+          <div class="dress-overlay"></div>
+          <div class="dress-hover-overlay"><span class="view-btn-label">عرض الصورة كاملة ✦</span></div>
+        </div>
+        <div class="dress-info">
+          <p class="dress-category">كلاسيك</p>
+          <h3 class="dress-name">Belle Époque</h3>
+          <p class="dress-price">من ١٨,٠٠٠ ريال</p>
+        </div>
+        <button class="dress-wishlist" data-id="1" data-name="Belle Époque" data-price="١٨,٠٠٠ ريال" onclick="toggleWishlist(this)">♡</button>
+      </div>
+
+      <div class="dress-card reveal" data-category="modern" style="transition-delay:0.2s">
+        <div class="dress-visual">
+          <div class="dress-art" onclick="lbOpen('images/3.jpg','Lumiere Minima','dress',2)" style="cursor:none;position:relative">
+            <img src="images/3.jpg" alt="Lumiere Minima" onerror="this.style.display='none';var n=this.nextElementSibling;if(n)n.style.display='flex'" >
+            <div style="display:none;position:absolute;inset:0;align-items:center;justify-content:center"><svg viewBox="0 0 180 300" width="60%" fill="none"><path d="M90 18 C80 18 72 30 72 44 L60 95 L30 275 L150 275 L120 95 L108 44 C108 30 100 18 90 18Z" fill="rgba(201,168,76,0.1)" stroke="#C9A84C" stroke-width="0.8"/><ellipse cx="90" cy="32" rx="16" ry="12" fill="none" stroke="#C9A84C" stroke-width="0.6" opacity="0.6"/><circle cx="90" cy="32" r="3" fill="#C9A84C" opacity="0.5"/></svg></div>
+          </div>
+          <div class="dress-overlay"></div>
+          <div class="dress-hover-overlay"><span class="view-btn-label">عرض الصورة كاملة ✦</span></div>
+        </div>
+        <div class="dress-info">
+          <p class="dress-category">عصري</p>
+          <h3 class="dress-name">Lumière Minima</h3>
+          <p class="dress-price">من ١٢,٠٠٠ ريال</p>
+        </div>
+        <button class="dress-wishlist" data-id="2" data-name="Lumière Minima" data-price="١٢,٠٠٠ ريال" onclick="toggleWishlist(this)">♡</button>
+        <div class="dress-badge">الأكثر طلباً</div>
+      </div>
+
+      <div class="dress-card reveal" data-category="oriental" style="transition-delay:0.3s">
+        <div class="dress-visual">
+          <div class="dress-art" onclick="lbOpen('images/4.jpg','Sultana d Est','dress',3)" style="cursor:none;position:relative">
+            <img src="images/4.jpg" alt="Sultana d Est" onerror="this.style.display='none';var n=this.nextElementSibling;if(n)n.style.display='flex'" >
+            <div style="display:none;position:absolute;inset:0;align-items:center;justify-content:center"><svg viewBox="0 0 180 300" width="60%" fill="none"><path d="M90 18 C80 18 72 30 72 44 L60 95 L30 275 L150 275 L120 95 L108 44 C108 30 100 18 90 18Z" fill="rgba(201,168,76,0.1)" stroke="#C9A84C" stroke-width="0.8"/><ellipse cx="90" cy="32" rx="16" ry="12" fill="none" stroke="#C9A84C" stroke-width="0.6" opacity="0.6"/><circle cx="90" cy="32" r="3" fill="#C9A84C" opacity="0.5"/></svg></div>
+          </div>
+          <div class="dress-overlay"></div>
+          <div class="dress-hover-overlay"><span class="view-btn-label">عرض الصورة كاملة ✦</span></div>
+        </div>
+        <div class="dress-info">
+          <p class="dress-category">شرقي</p>
+          <h3 class="dress-name">Sultana d'Est</h3>
+          <p class="dress-price">من ٢٢,٠٠٠ ريال</p>
+        </div>
+        <button class="dress-wishlist" data-id="3" data-name="Sultana d'Est" data-price="٢٢,٠٠٠ ريال" onclick="toggleWishlist(this)">♡</button>
+      </div>
+
+      <div class="dress-card reveal" data-category="classic" style="transition-delay:0.4s">
+        <div class="dress-visual">
+          <div class="dress-art" onclick="lbOpen('images/5.jpg','Etoile Blanche','dress',4)" style="cursor:none;position:relative">
+            <img src="images/5.jpg" alt="Etoile Blanche" onerror="this.style.display='none';var n=this.nextElementSibling;if(n)n.style.display='flex'" >
+            <div style="display:none;position:absolute;inset:0;align-items:center;justify-content:center"><svg viewBox="0 0 180 300" width="60%" fill="none"><path d="M90 18 C80 18 72 30 72 44 L60 95 L30 275 L150 275 L120 95 L108 44 C108 30 100 18 90 18Z" fill="rgba(201,168,76,0.1)" stroke="#C9A84C" stroke-width="0.8"/><ellipse cx="90" cy="32" rx="16" ry="12" fill="none" stroke="#C9A84C" stroke-width="0.6" opacity="0.6"/><circle cx="90" cy="32" r="3" fill="#C9A84C" opacity="0.5"/></svg></div>
+          </div>
+          <div class="dress-overlay"></div>
+          <div class="dress-hover-overlay"><span class="view-btn-label">عرض الصورة كاملة ✦</span></div>
+        </div>
+        <div class="dress-info">
+          <p class="dress-category">كلاسيك</p>
+          <h3 class="dress-name">Étoile Blanche</h3>
+          <p class="dress-price">من ١٥,٠٠٠ ريال</p>
+        </div>
+        <button class="dress-wishlist" data-id="4" data-name="Étoile Blanche" data-price="١٥,٠٠٠ ريال" onclick="toggleWishlist(this)">♡</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CAROUSEL -->
+<section id="featured">
+  <div class="container">
+    <div class="carousel-wrap">
+      <div class="reveal">
+        <p class="section-label">✦ المجموعة المميزة</p>
+        <h2 class="section-title">اختيارات <em>المحررة</em></h2>
+      </div>
+      <div class="carousel-track-container">
+        <div class="carousel-track" id="carouselTrack">
+          <!-- Slides -->
+          <div class="carousel-slide">
+            <div class="carousel-slide-img">
+              <div class="carousel-art" onclick="lbOpen('images/6.jpg','Princesse Doree','carousel',0)" style="cursor:none;position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+              <img src="images/6.jpg" alt="Princesse Doree" onerror="this.style.display='none'" >
+            </div>
+            </div>
+            <div class="carousel-meta">
+              <h3 class="carousel-name">Princesse Dorée</h3>
+              <p class="carousel-detail">حرير + دانتيل فرنسي — ٢٨,٠٠٠ ريال</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="carousel-slide-img">
+              <div class="carousel-art" onclick="lbOpen('images/7.jpg','Ivory Dream','carousel',1)" style="cursor:none;position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+              <img src="images/7.jpg" alt="Ivory Dream" onerror="this.style.display='none'" >
+            </div>
+            </div>
+            <div class="carousel-meta">
+              <h3 class="carousel-name">Ivory Dream</h3>
+              <p class="carousel-detail">ساتان إيطالي — ١٩,٥٠٠ ريال</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="carousel-slide-img">
+              <div class="carousel-art" onclick="lbOpen('images/8.jpg','Diamant Noir','carousel',2)" style="cursor:none;position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+              <img src="images/8.jpg" alt="Diamant Noir" onerror="this.style.display='none'" >
+            </div>
+            </div>
+            <div class="carousel-meta">
+              <h3 class="carousel-name">Diamant Noir</h3>
+              <p class="carousel-detail">قماش جيبور + مطرزات يدوية — ٣٢,٠٠٠ ريال</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="carousel-slide-img">
+              <div class="carousel-art" onclick="lbOpen('images/9.jpg','Aura Royale','carousel',3)" style="cursor:none;position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+              <img src="images/9.jpg" alt="Aura Royale" onerror="this.style.display='none'" >
+            </div>
+            </div>
+            <div class="carousel-meta">
+              <h3 class="carousel-name">Aura Royale</h3>
+              <p class="carousel-detail">أورجانزا + ترتر ذهبي — ٢٤,٠٠٠ ريال</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="carousel-slide-img">
+              <div class="carousel-art" onclick="lbOpen('images/10.jpg','La Couronne','carousel',4)" style="cursor:none;position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+              <img src="images/10.jpg" alt="La Couronne" onerror="this.style.display='none'" >
+            </div>
+            </div>
+            <div class="carousel-meta">
+              <h3 class="carousel-name">La Couronne</h3>
+              <p class="carousel-detail">شيفون فرنسي — ٢١,٠٠٠ ريال</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-controls">
+        <div class="carousel-dots">
+          <button class="c-dot active" data-dot="0"></button>
+          <button class="c-dot" data-dot="1"></button>
+          <button class="c-dot" data-dot="2"></button>
+        </div>
+        <div class="carousel-arrows">
+          <button class="carousel-arrow" id="prevSlide">←</button>
+          <button class="carousel-arrow" id="nextSlide">→</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="container">
+    <div class="reveal" style="text-align:center; margin-bottom:0">
+      <p class="section-label">✦ معرض الصور</p>
+      <h2 class="section-title">لحظات من <em>السحر</em></h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="lbOpen('images/11.jpg','لحظة ساحرة','gallery',0)" style="cursor:none">
+        <div class="gallery-img">
+          <div class="gallery-art">
+            <img src="images/11.jpg" alt="لحظة ساحرة" onerror="this.style.display='none'" >
+          </div>
+          <div class="gallery-overlay">
+            <span class="gallery-expand" style="pointer-events:none">⤢</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="lbOpen('images/12.jpg','لحظة ساحرة','gallery',1)" style="cursor:none">
+        <div class="gallery-img">
+          <div class="gallery-art">
+            <img src="images/12.jpg" alt="لحظة ساحرة" onerror="this.style.display='none'" >
+          </div>
+          <div class="gallery-overlay"></div>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="lbOpen('images/13.jpg','لحظة ساحرة','gallery',2)" style="cursor:none">
+        <div class="gallery-img">
+          <div class="gallery-art">
+            <img src="images/13.jpg" alt="لحظة ساحرة" onerror="this.style.display='none'" >
+          </div>
+          <div class="gallery-overlay"></div>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="lbOpen('images/14.jpg','لحظة ساحرة','gallery',3)" style="cursor:none">
+        <div class="gallery-img">
+          <div class="gallery-art">
+            <img src="images/14.jpg" alt="لحظة ساحرة" onerror="this.style.display='none'" >
+          </div>
+          <div class="gallery-overlay"></div>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="lbOpen('images/15.jpg','لحظة ساحرة','gallery',4)" style="cursor:none">
+        <div class="gallery-img">
+          <div class="gallery-art">
+            <img src="images/15.jpg" alt="لحظة ساحرة" onerror="this.style.display='none'" >
+          </div>
+          <div class="gallery-overlay"></div>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="lbOpen('images/16.jpg','لحظة ساحرة','gallery',5)" style="cursor:none">
+        <div class="gallery-img">
+          <div class="gallery-art">
+            <img src="images/16.jpg" alt="لحظة ساحرة" onerror="this.style.display='none'" >
+          </div>
+          <div class="gallery-overlay"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">✦ يقولون عنّا</p>
+      <h2 class="section-title">عرائسنا <em>يتكلمن</em></h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">لم أتخيل يوماً أن أجد فستاناً يجعلني أشعر بهذه الملوكية. كل تفصيل بالفستان كان يعكس أحلامي تماماً. شكراً Maison Lumière.</p>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-name">نورة الزهراني</p>
+        <p class="testimonial-date">زفاف — مارس ٢٠٢٥</p>
+      </div>
+      <div class="testimonial-card reveal" style="transition-delay:0.15s">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">التجربة كلها كانت ساحرة من أول لقاء حتى يوم الزفاف. الفريق محترف جداً والفستان تجاوز كل التوقعات. أنصح كل عروسة!</p>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-name">ريم العمري</p>
+        <p class="testimonial-date">زفاف — يناير ٢٠٢٥</p>
+      </div>
+      <div class="testimonial-card reveal" style="transition-delay:0.3s">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">المطرزات اليدوية والأقمشة الفاخرة لا مثيل لها. شعرت وكأن الفستان صُمِّم خصيصاً لروحي. يوم زفافي كان كحلم بفضلكم.</p>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-name">دانا المنصور</p>
+        <p class="testimonial-date">زفاف — أبريل ٢٠٢٥</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPOINTMENT -->
+<section id="appointment">
+  <div class="container">
+    <div class="appointment-grid">
+      <div class="reveal">
+        <p class="section-label">✦ جلسة خاصة</p>
+        <h2 class="section-title">احجزي <em>موعدك</em></h2>
+        <div class="gold-divider"></div>
+        <p class="section-desc">كل جلستنا مخصصة لك وحدك. خبيرتنا ترافقك خطوة بخطوة لاختيار الفستان المثالي.</p>
+        <form class="appt-form" onsubmit="submitAppointment(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>الاسم الكريم</label>
+              <input type="text" placeholder="اسمك" required>
+            </div>
+            <div class="form-group">
+              <label>رقم التواصل</label>
+              <input type="tel" placeholder="+966 5X XXX XXXX" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>تاريخ الجلسة</label>
+              <input type="date" required>
+            </div>
+            <div class="form-group">
+              <label>الوقت المفضل</label>
+              <select>
+                <option>١٠:٠٠ ص</option>
+                <option>١٢:٠٠ م</option>
+                <option>٢:٠٠ م</option>
+                <option>٤:٠٠ م</option>
+                <option>٦:٠٠ م</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>نوع الفستان المفضل</label>
+            <select>
+              <option>كلاسيكي فاخر</option>
+              <option>ملكي</option>
+              <option>عصري بسيط</option>
+              <option>شرقي مطرز</option>
+              <option>لم أحدد بعد</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>رسالة إضافية</label>
+            <textarea placeholder="أي تفاصيل تودين مشاركتها..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">احجزي الجلسة الخاصة</button>
+        </form>
+      </div>
+      <div class="appt-info reveal" style="transition-delay:0.3s">
+        <p class="section-label" style="margin-bottom:2rem">لماذا تختارين Maison Lumière؟</p>
+        <div class="appt-feature">
+          <div class="appt-icon">◆</div>
+          <div>
+            <h4 class="appt-feature-title">استشارة شخصية مجانية</h4>
+            <p class="appt-feature-text">خبيرة الأزياء تجلس معكِ وتفهم ذوقك ورؤيتك قبل أي شيء.</p>
+          </div>
+        </div>
+        <div class="appt-feature">
+          <div class="appt-icon">◇</div>
+          <div>
+            <h4 class="appt-feature-title">أقمشة حصرية مستوردة</h4>
+            <p class="appt-feature-text">نختار لكِ من أرقى أقمشة إيطاليا وفرنسا لضمان جمال لا مثيل له.</p>
+          </div>
+        </div>
+        <div class="appt-feature">
+          <div class="appt-icon">✦</div>
+          <div>
+            <h4 class="appt-feature-title">تفصيل على مقاسك تماماً</h4>
+            <p class="appt-feature-text">كل فستان يُفصَّل بعناية ليتناسب مع جسمك وشخصيتك الفريدة.</p>
+          </div>
+        </div>
+        <div class="appt-feature">
+          <div class="appt-icon">❋</div>
+          <div>
+            <h4 class="appt-feature-title">خدمة ما بعد الزفاف</h4>
+            <p class="appt-feature-text">نقدم خدمة حفظ وتنظيف الفستان الزفافي كتذكار لأجمل يوم.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">Maison Lumière</div>
+        <p>فن الأزياء الراقية لعروسة الغد — نصنع الأحلام ونحولها إلى واقع ساحر.</p>
+        <div style="margin-top:1.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
+          <a href="#" class="social-link">Instagram</a>
+          <a href="#" class="social-link">Pinterest</a>
+          <a href="#" class="social-link">TikTok</a>
+          <a href="#" class="social-link">Snapchat</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>المجموعات</h4>
+        <ul>
+          <li><a href="#">كلاسيك</a></li>
+          <li><a href="#">ملكي</a></li>
+          <li><a href="#">عصري</a></li>
+          <li><a href="#">شرقي</a></li>
+          <li><a href="#">الإكسسوارات</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>المحل</h4>
+        <ul>
+          <li><a href="#">قصتنا</a></li>
+          <li><a href="#">فريقنا</a></li>
+          <li><a href="#">المصممة الرئيسية</a></li>
+          <li><a href="#">المدونة</a></li>
+          <li><a href="#">الأخبار</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>تواصلي</h4>
+        <ul>
+          <li><a href="#">احجزي موعد</a></li>
+          <li><a href="#">واتساب</a></li>
+          <li><a href="#">البريد الإلكتروني</a></li>
+          <li><a href="#">موقعنا</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ٢٠٢٥ Maison Lumière. جميع الحقوق محفوظة</p>
+      <div style="display:flex;gap:2rem">
+        <a href="#" style="color:var(--gray-warm);font-size:0.78rem;text-decoration:none;cursor:none">سياسة الخصوصية</a>
+        <a href="#" style="color:var(--gray-warm);font-size:0.78rem;text-decoration:none;cursor:none">الشروط والأحكام</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ===== CURSOR =====
+const cursor = document.getElementById('cursor');
+const cursorRing = document.getElementById('cursorRing');
+let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+document.addEventListener('mousemove', e => {
+  mouseX = e.clientX; mouseY = e.clientY;
+  cursor.style.left = mouseX + 'px';
+  cursor.style.top = mouseY + 'px';
+});
+function animateRing() {
+  ringX += (mouseX - ringX) * 0.12;
+  ringY += (mouseY - ringY) *.12;
+  cursorRing.style.left = ringX + 'px';
+  cursorRing.style.top = ringY + 'px';
+  requestAnimationFrame(animateRing);
+}
+animateRing();
+document.querySelectorAll('a, button, .dress-card, .gallery-item, .testimonial-card').forEach(el => {
+  el.addEventListener('mouseenter', () => { cursorRing.style.width = '55px'; cursorRing.style.height = '55px'; cursorRing.style.opacity = '1'; });
+  el.addEventListener('mouseleave', () => { cursorRing.style.width = '36px'; cursorRing.style.height = '36px'; cursorRing.style.opacity = '0.6'; });
+});
+
+// ===== PARTICLES =====
+const particlesEl = document.getElementById('particles');
+for(let i = 0; i < 30; i++) {
+  const p = document.createElement('div');
+  p.className = 'particle';
+  p.style.cssText = `left:${Math.random()*100}%;width:${Math.random()*3+1}px;height:${Math.random()*3+1}px;animation-duration:${Math.random()*15+8}s;animation-delay:${Math.random()*10}s`;
+  particlesEl.appendChild(p);
+}
+
+// ===== NAVBAR =====
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 80);
+});
+
+// ===== HAMBURGER =====
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
+});
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+// ===== SCROLL REVEAL =====
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+  });
+}, { threshold: 0.15 });
+revealEls.forEach(el => observer.observe(el));
+
+// ===== FILTER =====
+const filterBtns = document.querySelectorAll('.filter-btn');
+const dressCards = document.querySelectorAll('.dress-card');
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    dressCards.forEach(card => {
+      if(filter === 'all' || card.dataset.category === filter) {
+        card.style.opacity = '1'; card.style.transform = 'translateY(0)';
+      } else {
+        card.style.opacity = '0.2'; card.style.transform = 'translateY(10px)';
+      }
+      card.style.transition = 'all 0.4s ease';
+    });
+  });
+});
+
+// ===== WISHLIST =====
+const wishlist = {};
+function toggleWishlist(btn) {
+  const id = btn.dataset.id;
+  const name = btn.dataset.name;
+  const price = btn.dataset.price;
+  if(wishlist[id]) {
+    delete wishlist[id];
+    btn.classList.remove('active');
+    btn.textContent = '♡';
+    showToast('تمت إزالة الفستان من المفضلة', false);
+  } else {
+    wishlist[id] = { name, price };
+    btn.classList.add('active');
+    btn.textContent = '♥';
+    showToast('تمت الإضافة إلى المفضلة ♥', true);
+  }
+  updateWishlistUI();
+}
+function updateWishlistUI() {
+  const count = Object.keys(wishlist).length;
+  const countEl = document.getElementById('wishlistCount');
+  countEl.style.display = count > 0 ? 'flex' : 'none';
+  countEl.textContent = count;
+  const items = document.getElementById('wishlistItems');
+  const empty = document.getElementById('wishlistEmpty');
+  const existing = items.querySelectorAll('.wishlist-item');
+  existing.forEach(el => el.remove());
+  if(count === 0) {
+    empty.style.display = 'block';
+  } else {
+    empty.style.display = 'none';
+    Object.entries(wishlist).forEach(([id, data]) => {
+      const div = document.createElement('div');
+      div.className = 'wishlist-item';
+      div.innerHTML = `<div class="wishlist-item-art"><svg viewBox="0 0 60 80" width="40" fill="none"><path d="M30 8 C24 8 20 15 20 22 L14 50 L5 75 L55 75 L46 50 L40 22 C40 15 36 8 30 8Z" fill="rgba(201,168,76,0.1)" stroke="#C9A84C" stroke-width="0.8"/></svg></div><div class="wishlist-item-info"><div class="wishlist-item-name">${data.name}</div><div class="wishlist-item-price">${data.price}</div></div><button class="wishlist-remove" onclick="removeFromWishlist('${id}')">✕</button>`;
+      items.appendChild(div);
+    });
+  }
+}
+function removeFromWishlist(id) {
+  delete wishlist[id];
+  const btn = document.querySelector(`.dress-wishlist[data-id="${id}"]`);
+  if(btn) { btn.classList.remove('active'); btn.textContent = '♡'; }
+  updateWishlistUI();
+}
+const wishlistToggle = document.getElementById('wishlistToggle');
+const wishlistSidebar = document.getElementById('wishlistSidebar');
+const wishlistOverlay = document.getElementById('wishlistOverlay');
+wishlistToggle.addEventListener('click', () => {
+  wishlistSidebar.classList.add('open');
+  wishlistOverlay.classList.add('open');
+});
+document.getElementById('wishlistClose').addEventListener('click', closeWishlist);
+wishlistOverlay.addEventListener('click', closeWishlist);
+function closeWishlist() {
+  wishlistSidebar.classList.remove('open');
+  wishlistOverlay.classList.remove('open');
+}
+
+// ===== TOAST =====
+function showToast(msg, isAdd) {
+  const toast = document.getElementById('toast');
+  toast.innerHTML = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 3000);
+}
+
+// ===== CAROUSEL =====
+const track = document.getElementById('carouselTrack');
+const slides = track.querySelectorAll('.carousel-slide');
+const dots = document.querySelectorAll('.c-dot');
+let currentSlide = 0;
+const slideWidth = 320 + 24;
+const visibleSlides = () => window.innerWidth > 900 ? 3 : window.innerWidth > 600 ? 2 : 1;
+function goToSlide(n) {
+  const max = Math.ceil(slides.length / visibleSlides()) - 1;
+  currentSlide = Math.max(0, Math.min(n, max));
+  track.style.transform = `translateX(${currentSlide * slideWidth * (document.documentElement.dir === 'rtl' ? 1 : -1)}px)`;
+  dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+}
+document.getElementById('nextSlide').addEventListener('click', () => goToSlide(currentSlide + 1));
+document.getElementById('prevSlide').addEventListener('click', () => goToSlide(currentSlide - 1));
+dots.forEach(dot => dot.addEventListener('click', () => goToSlide(+dot.dataset.dot)));
+setInterval(() => goToSlide((currentSlide + 1) % Math.ceil(slides.length / visibleSlides())), 4500);
+
+// ===== LIGHTBOX =====
+const lbGroups = {
+  dress:    { srcs:['images/1.jpg','images/2.jpg','images/3.jpg','images/4.jpg','images/5.jpg'], labels:['Reine dOr','Belle Epoque','Lumiere Minima','Sultana dEst','Etoile Blanche'] },
+  carousel: { srcs:['images/6.jpg','images/7.jpg','images/8.jpg','images/9.jpg','images/10.jpg'], labels:['Princesse Doree','Ivory Dream','Diamant Noir','Aura Royale','La Couronne'] },
+  gallery:  { srcs:['images/11.jpg','images/12.jpg','images/13.jpg','images/14.jpg','images/15.jpg','images/16.jpg'], labels:['لحظة ساحرة','لحظة ساحرة','لحظة ساحرة','لحظة ساحرة','لحظة ساحرة','لحظة ساحرة'] }
+};
+var lbGroup = 'dress';
+var lbIdx = 0;
+
+function lbOpen(src, caption, group, idx) {
+  lbGroup = group || 'dress';
+  lbIdx = idx || 0;
+  lbShow();
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function lbShow() {
+  var g = lbGroups[lbGroup];
+  var img = document.getElementById('lbImg');
+  var sp  = document.getElementById('lbSpinner');
+  var cap = document.getElementById('lbCaption');
+  var cnt = document.getElementById('lbCounter');
+  img.classList.remove('lb-loaded');
+  sp.style.display = 'block';
+  img.onload  = function(){ img.classList.add('lb-loaded'); sp.style.display='none'; };
+  img.onerror = function(){ sp.style.display='none'; img.classList.add('lb-loaded'); };
+  img.src = g.srcs[lbIdx];
+  cap.textContent = g.labels[lbIdx] || '';
+  cnt.textContent = (lbIdx+1) + ' / ' + g.srcs.length;
+}
+
+function lbMove(dir) {
+  var len = lbGroups[lbGroup].srcs.length;
+  lbIdx = (lbIdx + dir + len) % len;
+  lbShow();
+}
+
+function lbClose() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('lbClose').addEventListener('click', lbClose);
+document.getElementById('lbBackdrop').addEventListener('click', lbClose);
+document.getElementById('lbPrev').addEventListener('click', function(){ lbMove(-1); });
+document.getElementById('lbNext').addEventListener('click', function(){ lbMove(1); });
+document.addEventListener('keydown', function(e){
+  if(!document.getElementById('lightbox').classList.contains('open')) return;
+  if(e.key==='Escape') lbClose();
+  if(e.key==='ArrowLeft') lbMove(-1);
+  if(e.key==='ArrowRight') lbMove(1);
+});
+var lbTX = 0;
+document.getElementById('lightbox').addEventListener('touchstart', function(e){ lbTX = e.touches[0].clientX; });
+document.getElementById('lightbox').addEventListener('touchend', function(e){
+  var d = lbTX - e.changedTouches[0].clientX;
+  if(Math.abs(d)>50) lbMove(d>0?1:-1);
+});
+
+// ===== APPOINTMENT =====
+function submitAppointment(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.form-submit');
+  btn.textContent = '✓ تم تأكيد الحجز بنجاح!';
+  btn.style.background = '#2e7d32';
+  btn.style.color = '#fff';
+  setTimeout(() => {
+    btn.textContent = 'احجزي الجلسة الخاصة';
+    btn.style.background = '';
+    btn.style.color = '';
+    e.target.reset();
+  }, 4000);
+}
+</script>
+</body>
+</html>
